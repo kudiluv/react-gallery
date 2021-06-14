@@ -1,0 +1,73 @@
+.react-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.react-gallery__item {
+    height: 100px;
+    width: 100px;
+    transition: 0.3s;
+}
+
+.react-gallery__item:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.react-gallery-popup {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: .3s;
+}
+
+.react-gallery-popup_visible {
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.react-gallery-popup_hidden {
+    visibility: hidden;
+}
+
+.react-gallery-popup__background {
+    background: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
+}
+
+.react-gallery-popup__img {
+    display: block;
+    position: relative;
+    z-index: 1000;
+    height: 100vh;
+    object-fit: contain;
+    margin: auto;
+}
+
+.react-gallery-popup__controller {
+    position: absolute;
+    color: #ffffff;
+    top: 50%;
+    z-index: 1200;
+    font-size: 42px;
+    font-family: Roboto,Arial;
+    transform: translate(0, -50%);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.react-gallery-popup__controller:hover{
+    font-size: 48px;
+}
+.react-gallery-popup__controller-left {
+    left: 5%;
+}
+
+.react-gallery-popup__controller-right {
+    right: 5%;
+}

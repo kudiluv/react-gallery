@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import Gallery from "./Gallery";
+import img1 from "./images/img.png";
+import img2 from "./images/img_1.png";
+import img3 from "./images/img_2.png";
+import img4 from "./images/img_3.png";
+
+let destination = document.querySelector("#root");
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <div>
+        <Gallery images={[img1,img2,img3,img4]}/>
+    </div>
+    ,destination
+)
