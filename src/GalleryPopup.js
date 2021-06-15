@@ -22,15 +22,21 @@ class GalleryPopup extends PureComponent {
     }
 
     endMove(e) {
-        console.log(e.changedTouches[0].screenX - this.moveObj.startX)
-        if (e.changedTouches[0].screenX - this.moveObj.startX > 100) {
-            this.state.prevSlide();
+        if (e.changedTouches[0].screenX - this.moveObj.startX>100 ||
+            e.changedTouches[0].screenX - this.moveObj.startX<-100){
+            this.currentImg.classList.add("animationSlider");
         }
-        if (e.changedTouches[0].screenX - this.moveObj.startX < -100) {
-            this.state.nextSlide();
-        }
-        this.currentImg.style.left = "0px";
-        this.currentImg.style.transition = ".3s";
+        setTimeout(()=>{
+            if (e.changedTouches[0].screenX - this.moveObj.startX > 100) {
+                this.state.prevSlide();
+            }
+            if (e.changedTouches[0].screenX - this.moveObj.startX < -100) {
+                this.state.nextSlide();
+            }
+            this.currentImg.classList.remove("animationSlider");
+            this.currentImg.style.left = "0px";
+        },300);
+
     }
 
     render() {

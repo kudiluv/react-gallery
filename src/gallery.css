@@ -71,3 +71,18 @@
 .react-gallery-popup__controller-right {
     right: 5%;
 }
+.animationSlider{
+    animation-duration: 1s;
+    animation-name: nextImg;
+}
+@keyframes nextImg {
+    from {
+        opacity: 1;
+    }
+    70%{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
